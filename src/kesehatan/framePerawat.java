@@ -181,16 +181,19 @@ public class framePerawat extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        try {
-            String id_perawat = txtId.getText();
-            String nama_perawat = txtNama.getText();
-            String alamat_perawat = txtAlamat.getText();
-            String notelp_perawat = txtTelp.getText();
-            
-            new configDB().SimpanPerawatStatement(id_perawat, nama_perawat, alamat_perawat, notelp_perawat);
-        } catch (Exception e) {
-            System.err.println(e.toString());
-        }
+
+          // Membuat objek dari dbCRUD
+        configDB configDB = new configDB();
+
+        // Menyiapkan array field dan data
+        String[] field = {"nama_perawat", "alamat_perawat", "notelp_perawat"};
+        String[] data = {txtNama.getText(), txtAlamat.getText(), txtTelp.getText()};
+
+        // Memanggil method TambahDinamis menggunakan objek
+        configDB.TambahDinamis("perawat", "id_perawat", txtId.getText(), field, data);
+
+
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -200,13 +203,13 @@ public class framePerawat extends javax.swing.JFrame {
         String[] field = {"nama_perawat", "alamat_perawat", "notelp_perawat"};
         String[] data = {txtNama.getText(), txtAlamat.getText(), txtTelp.getText()};
 
-        configDB.UbahPerawatDinamis("perawat", "id_perawat", txtId.getText(), field, data);
+        configDB.UbahDinamis("perawat", "id_perawat", txtId.getText(), field, data);
 
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
 
-        configDB.HapusPerawatDinamis("perawat", "id_perawat", txtId.getText());
+        configDB.HapusDinamis("perawat", "id_perawat", txtId.getText());
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed

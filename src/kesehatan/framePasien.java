@@ -225,21 +225,29 @@ public class framePasien extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        try {
-            String id_pasien = txtId.getText();
-            String nik = txtNik.getText();
-            String nama_pasien = txtNama.getText();
-            String tempat_lahir  = txtTempatlahir.getText();
-            String tgl_lahir = txtTanggallahir.getText();
-            String jenis_kelamin = txtJeniskelamin.getText();
-            String pekerjaan = txtPekerjaan.getText();
-            String alamat = txtAlamat.getText();
-            String no_telp = txtTelp.getText();
-            
-            new configDB().SimpanPasienStatement(id_pasien, nik, nama_pasien, tempat_lahir, tgl_lahir, jenis_kelamin, pekerjaan, alamat, no_telp);
-        } catch (Exception e) {
-            System.err.println(e.toString());
-        }
+try {
+    // Menyiapkan data untuk disimpan
+    String[] field = {"nik", "nama_pasien", "tempat_lahir", "tgl_lahir", "jenis_kelamin", "pekerjaan", "alamat", "no_telp"};
+    String[] data = {
+        txtNik.getText(),
+        txtNama.getText(),
+        txtTempatlahir.getText(),
+        txtTanggallahir.getText(),
+        txtJeniskelamin.getText(),
+        txtPekerjaan.getText(),
+        txtAlamat.getText(),
+        txtTelp.getText()
+    };
+    
+    configDB configDB = new configDB();
+
+    // Memanggil method TambahDinamis menggunakan objek configDB
+    configDB.TambahDinamis("pasien", "id_pasien", txtId.getText(), field, data);
+
+} catch (Exception e) {
+    System.err.println(e.toString());
+}
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -249,11 +257,11 @@ public class framePasien extends javax.swing.JFrame {
         String[] field = {"nik", "nama_pasien", "tempat_lahir", "tgl_lahir", "jenis_kelamin", "pekerjaan", "alamat", "no_telp"};
         String[] data = {txtNik.getText(), txtNama.getText(), txtTempatlahir.getText(), txtTanggallahir.getText(), txtJeniskelamin.getText(), txtPekerjaan.getText(), txtAlamat.getText(), txtTelp.getText()};
 
-        configDB.UbahPasienDinamis("pasien", "id_pasien", txtId.getText(), field, data);
+        configDB.UbahDinamis("pasien", "id_pasien", txtId.getText(), field, data);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        dbCRUD.HapusPasienDinamis("pasien", "id_pasien", txtId.getText());
+        dbCRUD.HapusDinamis("pasien", "id_pasien", txtId.getText());
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
