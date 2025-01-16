@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="272c3dfe-8eed-4d20-a0f8-71551be5a835">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM pasien]]>
+	</queryString>
+	<field name="id_pasien" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nik" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nama_pasien" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tempat_lahir" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tgl_lahir" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="jenis_kelamin" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="pekerjaan" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="alamat" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="no_telp" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="234" y="27" width="100" height="20" uuid="76086847-d041-4c1c-aec6-f8fcbb4bf07e"/>
+				<text><![CDATA[TABEL PASIEN]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="21" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="23" height="20" uuid="1272c78f-2d09-4d18-83d6-ea2e2a5990bf"/>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="23" y="0" width="55" height="20" uuid="d306b434-e60b-451b-a91f-4d3e20a32ccd"/>
+				<text><![CDATA[NIK]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="78" y="0" width="58" height="20" uuid="fcd63063-839e-4521-84eb-7c0ac8f1a4c7"/>
+				<text><![CDATA[NAMA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="136" y="0" width="87" height="20" uuid="0ca1d5cd-ecb7-42c7-992d-71d37bf1b7a1"/>
+				<text><![CDATA[TEMPAT LAHIR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="223" y="1" width="65" height="20" uuid="20546c3a-3db9-4f80-ab9e-c243234469c9"/>
+				<text><![CDATA[TGL LAHIR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="288" y="0" width="71" height="20" uuid="184c1c22-893b-4bef-b67f-e3cceb83011b"/>
+				<text><![CDATA[Jenis Kelamin]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="359" y="0" width="64" height="20" uuid="12d532ce-82ef-4cec-9319-9c01b4596e43"/>
+				<text><![CDATA[PEKERJAAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="423" y="0" width="62" height="20" uuid="a206e4a3-d36d-426f-b595-7671a37b74ff"/>
+				<text><![CDATA[ALAMAT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="485" y="0" width="69" height="20" uuid="8788c9dd-c3ff-47fc-a947-9600a2c8fbe1"/>
+				<text><![CDATA[NO TELP]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="42" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="23" height="20" uuid="d6c4d6a0-e335-4b04-9c4a-45e932ff83a0"/>
+				<textFieldExpression><![CDATA[$F{id_pasien}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="23" y="0" width="55" height="20" uuid="fcd77d2d-f4dc-4067-aa26-609fba0e30ae"/>
+				<textFieldExpression><![CDATA[$F{nik}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="78" y="0" width="58" height="20" uuid="dd825693-2ae3-4bcc-ad8c-5dc0c2111c57"/>
+				<textFieldExpression><![CDATA[$F{nama_pasien}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="136" y="0" width="87" height="20" uuid="981e3d85-d4fb-44fd-abed-49b7e93f5b6f"/>
+				<textFieldExpression><![CDATA[$F{tempat_lahir}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="223" y="0" width="65" height="20" uuid="5089f795-b5e2-448f-8725-146daac61d26"/>
+				<textFieldExpression><![CDATA[$F{tgl_lahir}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="359" y="0" width="64" height="20" uuid="601197d0-42e4-4633-ac3b-281e37f5bfe5"/>
+				<textFieldExpression><![CDATA[$F{pekerjaan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="423" y="0" width="62" height="20" uuid="30f461cb-bc4f-46ab-bb70-c00322629405"/>
+				<textFieldExpression><![CDATA[$F{alamat}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="485" y="0" width="70" height="20" uuid="737c1505-ad29-4047-83a0-3e812b98c9c2"/>
+				<textFieldExpression><![CDATA[$F{no_telp}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="288" y="0" width="71" height="20" uuid="e78b890b-4a2b-471a-8094-40d2de43e4cf"/>
+				<textFieldExpression><![CDATA[$F{jenis_kelamin}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
